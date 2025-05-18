@@ -250,6 +250,8 @@ html, body {
     align-items: center;
     gap: 14px;
     justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
 }
 
 .offer-serial {
@@ -258,6 +260,7 @@ html, body {
     color: #c62828;
     min-width: 28px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .offer-img-box {
@@ -270,14 +273,41 @@ html, body {
     justify-content: center;
     overflow: hidden;
     border: 2px solid #c6282800;
-    /* Make the image box fill the grid cell */
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
 }
 
 .offer-img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Use cover if you want to crop */
+    object-fit: contain;
     display: block;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 900px) {
+    .offer-first-col {
+        gap: 8px;
+    }
+    .offer-serial {
+        font-size: 16px;
+        min-width: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .offer-first-col {
+        gap: 4px;
+    }
+    .offer-img-box {
+        border-radius: 6px;
+    }
+    .offer-img {
+        border-radius: 6px;
+    }
 }
 
 /* ==========================================================================
@@ -636,14 +666,14 @@ footer .copyright a:hover::after {
     .bonus-percent {
         font-size: 26px;
     }
-    .offer-img-box {
+    /* .offer-img-box {
         width: 38px;
         height: 38px;
     }
     .offer-img {
         width: 30px;
         height: 30px;
-    }
+    } */
     .play-btn {
         width: 110px;
         height: 44px;
@@ -731,14 +761,14 @@ footer .copyright a:hover::after {
     .offer-first-col {
         gap: 6px;
     }
-    .offer-img-box {
+    /* .offer-img-box {
         width: 28px;
         height: 28px;
     }
     .offer-img {
         width: 22px;
         height: 22px;
-    }
+    } */
     .offer-serial {
         font-size: 15px;
         min-width: 18px;
