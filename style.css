@@ -356,30 +356,25 @@ html, body {
    BUTTONS & LINKS
    ========================================================================== */
 .play-btn {
-    background: linear-gradient(90deg, #1976d2 0%, #c62828 100%);
-    color: #fff;
-    border: 2px solid #959595;
-    padding: 10px 20px;
-    border-radius: 50px;
-    width: 140px;
-    height: 64px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition:
-        background 0.3s cubic-bezier(.4, 0, .2, 1),
-        transform 0.2s cubic-bezier(.4, 0, .2, 1),
-        box-shadow 0.2s cubic-bezier(.4, 0, .2, 1);
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px; /* Adjust as needed */
+    width: 100%; /* Optional: makes button fill the cell */
     box-sizing: border-box;
+    border: none;
+    border-radius: 50px; /* Optional: for rounded corners */
+    font-size: 1rem;
+    background: #007bff; /* Example background */
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.1s linear;
 }
 
 .play-btn:hover {
-    transform: scale(1.07) rotate(-2deg);
+    transform: scale(1.07) ;
     box-shadow: 0 6px 24px 0 rgba(25, 118, 210, 0.25), 0 1.5px 6px 0 #c62828;
-    border: 2px solid #1976d2;
+   
 }
 
 .play-btn-link {
@@ -763,9 +758,7 @@ footer .copyright a:hover::after {
         font-size: 11px;
     }
     .play-btn {
-        width: 50px;
-        height: 28px;
-        font-size: 8px;
+        font-size: 11px;
         padding: 3px 2px;
         border-radius: 18px;
     }
@@ -823,9 +816,9 @@ footer .copyright a:hover::after {
         padding: 4px 1px;
     }
     .play-btn {
-        width: 40px;
-        height: 23px;
-        font-size: 6px;
+        width: 90px;
+        height: 40px;
+        font-size: 8px;
         padding: 3px 2px;
         border-radius: 18px;
     }
