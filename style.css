@@ -810,9 +810,7 @@ footer .copyright a:hover::after {
         margin: 10px 0 20px 0;
     }
     footer {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
+        display: block;
         width: 100vw;
         box-sizing: border-box;
     }
@@ -829,6 +827,17 @@ footer .copyright a:hover::after {
         order: 3;
         position: static;
         padding: 7vw 3vw;
+    }
+
+    footer .link,
+    .contact-info,
+    footer .copyright {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        position: static;
+        box-sizing: border-box;
+        z-index: auto;
     }
     h1 {
         padding: 0 3vw;
@@ -1010,5 +1019,120 @@ footer .copyright a:hover::after {
     .offer-row .offer-cell:nth-child(4) {
         grid-column: 2;
         grid-row: 2;
+    }
+}
+
+/* ==========================================================================
+   CONTACT INFO SECTION
+   ========================================================================== */
+.contact-info {
+    padding: 30px 100px 0 100px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+@media (max-width: 900px) {
+    .contact-info {
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+    .contact-info {
+        padding: 7vw 3vw 0 3vw;
+    }
+}
+
+/* Add this to give .contact-info a links the same hover effect as .copyright a */
+.contact-info a {
+    color: #ffffffb7;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.contact-link {
+   display: flex;
+   justify-content: center;
+}
+
+.contact-link a {
+    flex-direction: row;
+}
+
+.contact-info a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.contact-info a:hover::after {
+    width: 100%;
+}
+
+/* Style contact-info links in a beautiful box */
+.contact-info .contact-links {
+    display: inline-block;
+    background: rgba(40, 53, 147, 0.15);
+    border: 1.5px solid #8d9aff;
+    border-radius: 12px;
+    padding: 10px 50px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 12px 0 rgba(40,53,147,0.08);
+    text-align: left;
+}
+
+.contact-info .contact-links a {
+    display: block;
+    margin: 0 0;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+    padding: 10px;
+}
+
+.contact-info .contact-links a::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+    line-height: 1.2;
+}
+
+.contact-info .contact-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1.5px;
+    background: #8d9aff;
+    transition: width 0.3s ease;
+}
+
+.contact-info .contact-links a:hover {
+    color: #8d9aff;
+}
+
+.contact-info .contact-links a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .contact-info .contact-links {
+        padding: 12px 8px;
+        font-size: 1em;
+    }
+    .contact-info {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
